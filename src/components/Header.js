@@ -20,7 +20,6 @@ export const Header = () => {
   const classes = useStyles();
   const [ isLogged, setIsLogged ] = useState(false);
 
-
   return (
     <div className={classes.root}>
       <AppBar

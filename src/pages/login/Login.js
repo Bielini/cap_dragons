@@ -40,7 +40,7 @@ export const Login = () => {
         const user = await response.json();
         console.log(user);
         // login(user);
-        navigate('/', { replace: true });
+        navigate('/1');
       } else {
         setIsError(true);
       }
