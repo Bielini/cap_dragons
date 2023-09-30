@@ -144,19 +144,19 @@ const Camera2 = () => {
   if (!result) {
     return (
       <Stack sx={{ m: 2, alignItems: 'center' }}>
-        {!isLogged? <Button
-          color="primary"
-          startIcon={<LoginIcon />}
-          // component={Link}
-          // to="/login"
-        >
-          Logowanie
-        </Button> :
-          <Stack>
-            <Typography>Twoje konto: 300 points</Typography>
-            <Button color="primary" size="large">Leaderboard: </Button>
-          </Stack>
-        }
+        {/*{!isLogged? <Button*/}
+        {/*  color="primary"*/}
+        {/*  startIcon={<LoginIcon />}*/}
+        {/*  // component={Link}*/}
+        {/*  // to="/login"*/}
+        {/*>*/}
+        {/*  Logowanie*/}
+        {/*</Button> :*/}
+        {/*  <Stack>*/}
+        {/*    <Typography>Twoje konto: 300 points</Typography>*/}
+        {/*    <Button color="primary" size="large">Leaderboard: </Button>*/}
+        {/*  </Stack>*/}
+        {/*}*/}
         <Typography variant="h4" m={4}>
           Pora wyciepać tego śmiecia
         </Typography>

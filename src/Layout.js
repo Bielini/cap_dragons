@@ -1,24 +1,14 @@
-import { makeStyles } from "@mui/styles";
+import { Box } from '@mui/material';
+import { Header } from "./components/Header";
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    width: '100%',
-    minHeight: '100vh',
-    display: 'flex',
-    justifyContent: 'center',
-    background: theme.palette.background.main
-  }
-}));
-
-export const Layout = ({ children }) => {
-  const classes = useStyles();
-
+export const Layout = ({ children, isDarkTheme, onThemeToggle }) => {
   return (
-    <div className={classes.container}>
-      <div className={classes.main}>
+    <Box display="flex" flexDirection="column" height="100vh">
+      <Header isDarkTheme={isDarkTheme} onThemeToggle={onThemeToggle}/>
+
+      <Box flexGrow={1} overflow="auto">
         {children}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
-
