@@ -9,11 +9,9 @@ body {
 .v1_129 {
   width: 360px;
   height: 800px;
-  background: rgba(58,154,73,1);
+  background: #379C49;
   opacity: 1;
   position: relative;
-  top: -20px;
-  left: 0px;
   overflow: hidden;
 }
 .v1_114 {
@@ -77,20 +75,6 @@ body {
   left: 75px;
   overflow: hidden;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .v1_1111 {
   width: 160px;
   height: 160px;
@@ -177,8 +161,6 @@ body {
   left: 118px;
   overflow: hidden;
 }
-
-
 .pacman-container {
   display: flex;
   justify-content: center;
@@ -187,14 +169,6 @@ body {
   top: 649px;
   left: 140px;
 }
-
-
-
-
-
-
-
-
 .v2_137 {
   width: 360px;
   height: 800px;
@@ -274,17 +248,6 @@ body {
   opacity: 1;
   text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
 .v16_271 {
   width: 360px;
   height: 800px;
@@ -450,8 +413,6 @@ body {
   text-align: center;
   line-height: 1.2;
 }
-
-
 .last-trash {
   width: 205px;
   height: 184px;

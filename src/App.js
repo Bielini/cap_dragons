@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "@mui/styles";
+import { CssBaseline } from "@mui/material";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from "./Layout";
+import { theme } from "./theme/theme";
+import Camera from "./pages/camera/camera";
+import Camera2 from "./pages/camera/camera2";
+import { Login } from "./pages/login/Login";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Layout >
+        <BrowserRouter>
+
+          <Routes>
+            <Route path="/" element={<Camera />} />
+            <Route path="/1" element={<Camera2 />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
+      </Layout>
+    </ThemeProvider>
   );
 }
 

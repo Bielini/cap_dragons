@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect } from "react";
-
 import "./Main.scss";
 import SimpleSpinner from "../components/SimpleSpinner";
 import PhotoUploader from "../components/PhotoUploader";

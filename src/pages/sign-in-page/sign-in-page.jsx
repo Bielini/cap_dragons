@@ -60,7 +60,8 @@ const SignInPage = () => {
             <Spinner/>
         </div> :
         <button type="submit">
-            Sign In</button>
+            Sign In
+        </button>
 
     return (
         <div className="sign-in-wrapper">

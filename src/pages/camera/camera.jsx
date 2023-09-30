@@ -1,17 +1,15 @@
 import * as React from 'react';
-
 import './camera.css'
 import Webcam from "react-webcam";
 import {useCallback, useEffect, useRef, useState} from "react";
 import {PacmanLoader} from "react-spinners";
-
 import mixedImg from "./inne.png";
 import paperImg from "./paper.png";
 import glassImg from "./glass.png";
 import bioImg from "./bio.png";
 import plasticImg from "./plastic.png";
 import humanImg from "./human.png";
-import {useHistory} from "react-router-dom";
+// import {useHistory} from "react-router-dom";
 
 function convertWebpToJpeg(webpData) {
     const canvas = document.createElement("canvas");
@@ -49,7 +47,7 @@ const Camera = () => {
     const [isHuman, setHuman] = useState(false);
     const [count, setCount] = useState(0);
 
-    const history = useHistory();
+    // const history = useHistory();
 
     const collectorId = window.location.href.split('/').pop();
 
@@ -157,7 +155,7 @@ const Camera = () => {
                     />) : (<img src={photoUrl} alt="Captured"/>)}
                 </div>
                 <span className="v1_97">Najpierw zrób śmieciowi zdjęcie...</span>
-                <span className="v1_98">Pora wyciepać tego śmiecia!</span>
+                <span className="v1_98">Pora wyciepać tego śmiecia!!!!!!!!!</span>
                 <div className="v1_109"></div>
             </div>
         </div>);

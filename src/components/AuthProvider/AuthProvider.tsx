@@ -2,28 +2,19 @@ import { PropsWithChildren, createContext, useEffect, useReducer } from 'react';
 import { initialState, IAuthState } from './initialState';
 import { reducer } from './reducer';
 import { Types } from './types';
-import { IUser } from '@/components/Registration/types';
 
-interface IAuthProviderValues extends IAuthState {
-  login: (user: IUser) => void;
-};
-
-export const AuthContext = createContext<IAuthProviderValues>({
+export const AuthContext = createContext({
   ...initialState,
 
-  login: () => {}
+  login: (user) => {}
 });
 
-export const AuthProvider = ({ children } : PropsWithChildren) => {
+export const AuthProvider = ({ children }) => {
   const [ state, dispatch ] = useReducer(reducer, initialState);
 
-  const login = (user: IUser) => {
+  const login = (user) => {
     dispatch({ type: Types.Login, payload: user });
   };
-  //
-  // useEffect(() => {
-  //   localStorage.setItem('auth', JSON.stringify(state));
-  // }, [ state ]);
 
   return (
     <AuthContext.Provider
