@@ -1,5 +1,5 @@
-import { PropsWithChildren, createContext, useEffect, useReducer } from 'react';
-import { initialState, IAuthState } from './initialState';
+import { createContext, useReducer } from 'react';
+import { initialState } from './initialState';
 import { reducer } from './reducer';
 import { Types } from './types';
 

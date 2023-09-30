@@ -2,11 +2,12 @@ import { ThemeProvider } from '@mui/material';
 import { CssBaseline } from "@mui/material";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from "./Layout";
-import { darkTheme, lightTheme, theme } from "./theme/theme";
+import { darkTheme, lightTheme } from "./theme/theme";
 import Camera from "./pages/camera/camera";
 import Camera2 from "./pages/camera/camera2";
 import { Login } from "./pages/login/Login";
 import { useCallback, useEffect, useState } from "react";
+// import { AuthProvider } from "./components/AuthProvider";
 
 const isDarkThemeKey = 'isDarkTheme';
 let item = false;
@@ -29,16 +30,16 @@ function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <CssBaseline />
-      <Layout isDarkTheme={isDarkTheme} onThemeToggle={handleChangeTheme} >
-        <BrowserRouter>
+        <Layout isDarkTheme={isDarkTheme} onThemeToggle={handleChangeTheme} >
+          <BrowserRouter>
 
-          <Routes>
-            <Route path="/" element={<Camera />} />
-            <Route path="/1" element={<Camera2 />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </BrowserRouter>
-      </Layout>
+            <Routes>
+              <Route path="/" element={<Camera />} />
+              <Route path="/1" element={<Camera2 />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </BrowserRouter>
+        </Layout>
     </ThemeProvider>
   );
 }

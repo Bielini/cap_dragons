@@ -6,8 +6,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import bean from "../camera/bean.png";
 import { useContext, useState } from "react";
 import { useForm, FormProvider } from 'react-hook-form';
-// import { AuthContext } from "../../components/AuthProvider";
-// import { AuthContext } from "../../components/AuthProvider";
 
 const defaultValues = {
   email: '',
@@ -23,23 +21,35 @@ export const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [ isError, setIsError ] = useState(false);
-  // const { login } = useContext(AuthContext);
   const form = useForm({
     defaultValues,
     resolver: yupResolver(schema)
   });
-  const handleSubmit = (values) => {
-    console.log(values);
-    // authApi.login(values)
-    //   .then((user) => {
-    //     console.log(user);
-    //     login(user);
-    //     if (user) navigate(location.state?.from?.pathname || '/', { replace: true });;
-    //   })
-    //   .catch(() => {
-    //     setIsError(true);
-    //   });
+  const handleSubmit = async (values) => {
+    try {
+      const response = await fetch('URL_ВАШЕГО_АПИ', {
+        method: 'POST', // Используйте метод POST для отправки данных
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'YOUR_ACCESS_TOKEN',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        const user = await response.json();
+        console.log(user);
+        // login(user);
+        navigate('/', { replace: true });
+      } else {
+        setIsError(true);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setIsError(true);
+    }
   };
+
   return (
     <Container maxWidth="xs">
       <FormProvider {...form}>
